@@ -18,7 +18,7 @@ export default class Signup extends Component {
 
   register() {
   
-    console.log('this.state', this.state)
+    // console.log('this.state', this.state)
   }
 
   render() {
@@ -40,28 +40,28 @@ export default class Signup extends Component {
               type="text"
               name="email"
               placeholder="Email"
-              value={this.state.email}
-              onChange={e => this.setState({email: e.target.value})}
+              // value=''
+              // onChange=''
             />
             <input
               className="signupInput"
               type="text"
               name="username"
               placeholder="Username"
-              value={this.state.username}
-              onChange={e => this.setState({username: e.target.value})}
+              // value=''
+              // onChange=''
             />
             <input
               className="signupInput"
               type="password"
               name="passwprd"
               placeholder="Password"
-              value={this.state.password}
-              onChange={e => this.setState({username: e.target.value})}
+              // value=''
+              // onChange=''
             />
             {/* <Link to="/login"> */}
               <button className="formButton"
-               onClick={() => this.register()}
+              //  onClick=''
               >Signup</button>
             {/* </Link> */}
           </form>
