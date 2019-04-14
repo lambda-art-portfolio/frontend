@@ -1,23 +1,28 @@
-import React, { Component } from 'react'
-import {Route, Link} from 'react-router-dom'
-import homepage from '../routes/homepage';
-import login from '../routes/login';
+import React, { Component } from "react";
+import "../../CSS/nav.css"
+import { Route, Link } from "react-router-dom";
+import Homepage from "../routes/Homepage";
+import Login from "../routes/Login";
+import SignUp from "../routes/Signup"
 
-export default class navbar extends Component {
+
+
+
+export default class Navbar extends Component {
   render() {
     return (
       <div>
-        <ul>
-            <li>
 
-            </li>
-            <li>
+        <nav>
+          <Link to="/">Home</Link>
+          <input/>
+          <Link to="/login">Login</Link>
+        </nav>
 
-            </li>
-        </ul>
-        <Route path="/login" component={login} />
-        <Route path="/" component={homepage} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={SignUp} />
+        <Route exact path="/" component={Homepage} />
       </div>
-    )
+    );
   }
 }

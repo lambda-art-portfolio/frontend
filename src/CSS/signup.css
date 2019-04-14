@@ -1,0 +1,54 @@
+.signupContainer {
+  width: 1000px;
+  margin: 40px auto;
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.buttonContainer {
+  width: 350px;
+  display: flex;
+  border-radius: 5px;
+  margin: auto;
+  border: solid grey;
+}
+.formContainer {
+  margin: 20px auto;
+  width: 350px;
+  border: solid grey;
+  border-radius: 5px;
+}
+
+.topButton {
+  padding: 0;
+  border: none;
+  background: none;
+  width: 50%;
+  text-align: center;
+}
+
+.selected {
+  border-bottom: solid;
+  text-align: center;
+}
+.signupInput {
+  margin-top: 20px;
+}
+
+.signupForm {
+  margin: auto;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  width: 100%;
+}
+button:hover {
+  cursor: pointer;
+}
+.formButton {
+  margin: 20px 0;
+}
