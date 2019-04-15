@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import PhotoGrid from '../gallery/PostGrid';
-
+import PostGrid from '../gallery/PostGrid';
+import "../../CSS/homepage.css"
 export default class Homepage extends Component {
   render() {
     return (
-      <div>
-        <PhotoGrid />
+      <div className="homegrid">
+        <PostGrid />
       </div>
     )
   }

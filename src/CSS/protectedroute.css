@@ -1,0 +1,16 @@
+.gridAndForm{
+    display:flex;
+    justify-content: space-between;
+    margin: 0 30px;
+}
+
+.gridAndForm .gridcontainer {
+    width:80%;
+    /* border:solid; */
+}
+
+.gridAndForm .postcontainer {
+    width:200px;
+    /* border:solid; */
+    height:100px;
+}

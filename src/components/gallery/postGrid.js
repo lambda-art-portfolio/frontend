@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Post from './Post'
+import "../../CSS/postgrid.css"
 
 export default class PostGrid extends Component {
   constructor(props) {
@@ -23,8 +25,16 @@ export default class PostGrid extends Component {
   render() {
     console.log(this.state.data.username)
     return (
-      <div>
-        postGrid
+      <div className="postGrid">
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
       </div>
     )
   }
