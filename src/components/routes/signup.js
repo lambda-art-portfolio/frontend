@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../../CSS/signup.css";
 import { Route, Link } from "react-router-dom";
-import Login from "./Login";
+import Login from "./login";
 import axios from 'axios'
 
 export default class Signup extends Component {
