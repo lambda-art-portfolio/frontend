@@ -7,14 +7,22 @@ export default class PostGrid extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      posts: {
+      id:'',
+      user_id: "",
+      picture:'',
+      description: '',
+      upvotes:''
+
+      },
+
     };
   }
 
     getData = () => { 
       axios
-        .get("http://localhost:5000/api/data")
-        .then(res => this.setState({ data: res.data }))
+        .get("https://web17-artfolio.herokuapp.com/api/posts")
+        .then(res => this.setState({ posts: res.posts}))
         .catch(err => console.log(err));
     }
 
@@ -23,7 +31,7 @@ export default class PostGrid extends Component {
     // }
 
   render() {
-    console.log(this.state.data.username)
+    // console.log(this.state.posts)
     return (
       <div className="postGrid">
         <Post />

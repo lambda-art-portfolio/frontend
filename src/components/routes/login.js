@@ -46,8 +46,8 @@ state = {
   };
 
   render() {
-    // console.log(this.state.credentails.username)
-
+    // console.log(this.state.credentails)
+    // console.log(res.data)
     return (
       <div className="loginContainer">
         <div className="buttonContainer">
