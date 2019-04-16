@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import "./CSS/App.css";
-import Navbar from "./components/navigation/Navbar";
 import Homepage from "./components/routes/Homepage";
 import Login from "./components/routes/Login";
 import SignUp from "./components/routes/Signup";
 import PrivateRoute from "./components/routes/PrivateRoute";
 import UserPage from "./components/routes/UserPage";
 import UserInfo from "./components/routes/UserInfo";
+import ProtectedNav from "./components/navigation/ProtectedNav"
+import PrivateNav from "./components/routes/PrivateNav";
 
 class App extends Component {
   render() {
@@ -15,7 +16,7 @@ class App extends Component {
       <div className="App">
         <div>
           <header className="App-header">
-            <Navbar />
+          <PrivateNav  path="/" component={ProtectedNav} />
           </header>
           
           <Switch>
