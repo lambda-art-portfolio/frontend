@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import "./CSS/App.css";
-import Homepage from "./components/routes/Homepage";
+import Homepage from "./components/routes/homepage";
 import Login from "./components/routes/Login";
 import SignUp from "./components/routes/Signup";
 import PrivateRoute from "./components/routes/PrivateRoute";
