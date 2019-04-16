@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import "./CSS/App.css";
-import Homepage from "./components/routes/Homepage";
-import Login from "./components/routes/Login";
-import SignUp from "./components/routes/Signup";
+import Homepage from "./components/routes/Home";
+import Login from "./components/routes/LoginPage";
+import SignUp from "./components/routes/SignupPage";
 import PrivateRoute from "./components/routes/PrivateRoute";
 import UserPage from "./components/routes/UserPage";
 import UserInfo from "./components/routes/UserInfo";
