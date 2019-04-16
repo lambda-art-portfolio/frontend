@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../../CSS/signup.css";
 import { Route, Link } from "react-router-dom";
-import Login from "./login";
+import Login from "./Login";
 import axios from 'axios'
 
 export default class Signup extends Component {
@@ -9,7 +9,7 @@ export default class Signup extends Component {
   //   super(props);
    state = {
       credentials: {
-        avatar:'',
+        avatar:"",
         email: "",
         username: "",
         password: "",
