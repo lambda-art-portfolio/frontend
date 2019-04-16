@@ -1,7 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import Navbar from "../navigation/Navbar";
-// import NavBar from '../navigation/Navbar'
 
 const PrivateNav = ({ component: Component, ...rest }) => {
   return (

@@ -3,9 +3,6 @@ import "../../CSS/nav.css";
 import { Link } from "react-router-dom";
 
 export default class ProtectedNav extends Component {
-  handleChange(e) {
-    this.setState({ hideNav: true });
-  }
 
   logout = () => {
     localStorage.removeItem("token");
@@ -28,7 +25,6 @@ export default class ProtectedNav extends Component {
               <Link className="link" to="/protected">
                 User Page
               </Link>
-
               <Link className="link" to="/account">
                 Account
               </Link>

@@ -4,15 +4,6 @@ import { Link } from "react-router-dom";
 
 export default class Navbar extends Component {
 
-handleChange(e) {
-  this.setState({hideNav: true})
-}
-
-  logout = () => {
-    localStorage.removeItem("token");
-  };
-
-
   render() {
     return (
       <div>
@@ -23,7 +14,6 @@ handleChange(e) {
                 Home
               </Link>
             </div>
-            <div>{/* <input /> */}</div>
             <div>
               <Link 
               className="link"
