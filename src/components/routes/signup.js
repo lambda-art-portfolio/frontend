@@ -2,78 +2,72 @@ import React, { Component } from "react";
 import "../../CSS/signup.css";
 import { Route, Link } from "react-router-dom";
 import Login from "./Login";
+import axios from 'axios'
 
 export default class Signup extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      credentails: {
+  // constructor(props) {
+  //   super(props);
+   state = {
+      credentials: {
+        avatar:'',
         email: "",
         username: "",
         password: "",
         errors: []
       }
     };
-  }
+  // }
+  registerData = creds => {
+    console.log(creds)
+    return axios
+      .post("https://web17-artfolio.herokuapp.com/api/account/register", creds)
+      .then(res => {
+        localStorage.setItem("token", res.data.token);
+        console.log(res.data)
+      })
+      .catch(err => console.log(err));
+  };
 
-  showValidationErr(e, msg) {
-    this.setState(prevState => ({
-      errors: [...prevState.credentails.errors, { e, msg }]
-    }));
-  }
-  clearValidationErr(e) {
-    this.setState(prevState => {
-      let newArr = [];
-      for (let err of prevState.credentails.errors) {
-        if (e !== err.e) {
-          newArr.push(err);
-        }
+
+  handleChange = e => {
+    this.setState({
+      credentials: {
+        ...this.state.credentials,
+        [e.target.name]: e.target.value
       }
-      return newArr;
     });
-  }
+  };
 
-  onUsernameChange(e) {
-    this.setState.credentails({ username: e.target.value });
-    this.clearValidationErr("username");
-  }
-  onEmailChange(e) {
-    this.setState.credentails({ email: e.target.value });
-    this.clearValidationErr("email");
-  }
-  onPasswordChange(e) {
-    this.setState.credentails({ password: e.target.value });
-    this.clearValidationErr("password");
-  }
+  login = e => {
+    e.preventDefault();
+    this.registerData(this.state.credentials)
+    .then(() => {
+      this.props.history.push("/protected");
+    });
+  };
+  
 
   register() {
-    // console.log('this.state', this.state)
-    if (this.state.credentails.email === "") {
-      return this.showValidationErr("username", "Username cannot be empty")
-    } else  if (this.state.credentails.username === "") {
-      return this.showValidationErr("username", "Username cannot be empty")
-    }else  if (this.state.credentails.password === "") {
-      return this.showValidationErr("username", "Username cannot be empty")
-    }
+
   }
 
 
 
   render() {
-    let usernameErr= null,
-    passwordErr= null,
-    emailErr= null;
+    // let usernameErr= null,
+    // passwordErr= null,
+    // emailErr= null;
 
-    for(let err of this.state.credentails.errors) {
-      if(err.e ==="username") {
-        usernameErr = err.msg;
-      } if (err.e ==="email") {
-        emailErr = err.msg;
-      } if (err.e ==="password") {
-        passwordErr = err.msg;
-      }
+    // for(let err of this.state.credentials.errors) {
+    //   if(err.e ==="username") {
+    //     usernameErr = err.msg;
+    //   } if (err.e ==="email") {
+    //     emailErr = err.msg;
+    //   } if (err.e ==="password") {
+    //     passwordErr = err.msg;
+    //   }
 
-    }
+    // }
 
     return (
       <div className="signupContainer">
@@ -86,34 +80,42 @@ export default class Signup extends Component {
 
         <div className="formContainer">
           <h1>Sign up</h1>
-          <form className="signupForm">
+          <form 
+          className="signupForm"
+          onSubmit={this.login} 
+          >
             <input
               className="signupInput"
               type="text"
               name="email"
               placeholder="Email"
               // value=''
-              onChange={this.onEmailChange}
+              onChange={this.handleChange}
             />
-            <p>{emailErr ? emailErr : "" }</p>
+             <input
+              className="signupInput"
+              type="text"
+              name="avatar"
+              placeholder="Avatar"
+              // value=''
+              onChange={this.handleChange}
+            />
             <input
               className="signupInput"
               type="text"
               name="username"
               placeholder="Username"
               // value=''
-              onChange={this.onUsernameChange}
+              onChange={this.handleChange}
             />
-            <p>{usernameErr ? usernameErr : "" }</p>
             <input
               className="signupInput"
               type="password"
               name="password"
               placeholder="Password"
               // value=''
-              onChange={this.onPasswordChange}
+              onChange={this.handleChange}
             />
-            <p>{passwordErr ? passwordErr : "" }</p>
             {/* <Link to="/login"> */}
             <button
               className="formButton"

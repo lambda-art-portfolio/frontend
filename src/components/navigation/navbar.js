@@ -3,22 +3,44 @@ import "../../CSS/nav.css";
 import { Link } from "react-router-dom";
 
 export default class Navbar extends Component {
+constructor() {
+  super();
+  this.state= {
+    hideNav:false
+  }
+}
+
+handleChange(e) {
+  this.setState({hideNav: true})
+}
+
   logout = () => {
     localStorage.removeItem("token");
   };
 
+
+
+  loggedIn = () => {
+    if (localStorage.getItem("token")) {
+      return "link hide";
+    } else {
+      return "link ";
+    }
+  };
+
+   
+
+  loggedOut = () => {
+    if (localStorage.getItem("token")) {
+      return "link ";
+    } else {
+      return "link hide";
+    }
+  };
+
+  // (localStorage.getItem("token") ? "link hide" : "link")
+
   render() {
-    //     let btnLogin = document.getElementById("btnLogin");
-    //     let btnLogout = document.getElementById("btnLogout");
-
-    //   if (localStorage.getItem("token")) {
-    // btnLogin.classList.add("hide");
-    // btnLogout.classList.remove("hide");
-
-    // } else {
-    // btnLogin.classList.remove("hide");
-    // btnLogout.classList.add("hide");}
-
     return (
       <div>
         <div className="navDiv">
@@ -30,23 +52,29 @@ export default class Navbar extends Component {
             </div>
             <div>{/* <input /> */}</div>
             <div>
-              <Link className="link" to="/login" id="btnLogin">
+              <Link 
+              className={this.loggedIn()} 
+              to="/login">
                 Login
               </Link>
-              <Link
-                className="link"
-                to="/"
-                id="btnlogout"
-                // className="hide"
-                // onClick={this.logout()}
-              >
-                Logout
-              </Link>
-              <Link className="link" to="/protected">
+
+              <Link 
+              className={this.loggedOut()} 
+              to="/protected">
                 User Page
               </Link>
-              <Link className="link" to="/account">
+
+              <Link 
+              className={this.loggedOut()} 
+              to="/account">
                 Account
+              </Link>
+              <Link
+                to="/"
+                className={this.loggedOut()}
+                onClick={this.logout}
+              >
+                Logout
               </Link>
             </div>
           </nav>

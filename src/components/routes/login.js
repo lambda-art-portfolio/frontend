@@ -10,16 +10,19 @@ export default class Login extends Component {
   //   this.
   // }
 state = {
-      credentails: {
+      credentials: {
         username: "",
         password: ""
       }
     };
+    
   loginData = creds => {
+    console.log(creds)
     return axios
-      .post("http://localhost:5000/api/login", creds)
+      .post("https://web17-artfolio.herokuapp.com/api/account/login", creds)
       .then(res => {
-        localStorage.setItem("token", res.data.payload);
+        localStorage.setItem("token", res.data.token);
+        console.log(res.data)
       })
       .catch(err => console.log(err));
   };
@@ -27,8 +30,8 @@ state = {
 
   handleChange = e => {
     this.setState({
-      credentails: {
-        ...this.state.credentails,
+      credentials: {
+        ...this.state.credentials,
         [e.target.name]: e.target.value
       }
     });
@@ -58,12 +61,14 @@ state = {
         <div className="formContainer">
           <h1 className="loginheader">Log in</h1>
           <form onSubmit={this.login} className="loginForm">
+          
             <input
               className="loginInput"
               type="text"
               name="username"
               placeholder="Username"
-              value={this.state.credentails.username}
+              value=
+              {this.state.credentials.username}
               onChange={this.handleChange}
             />
 
@@ -72,7 +77,7 @@ state = {
               type="password"
               name="password"
               placeholder="Password"
-              value={this.state.credentails.password}
+              value={this.state.credentials.password}
               onChange={this.handleChange}
             />
 
