@@ -55,7 +55,11 @@ class PostPage extends Component {
       token: this.state.token
     })
     .then(
-      
+      this.setState({
+        upvotes:this.state.upvotes + 1
+      })
+
+
     )
   };
 
@@ -87,7 +91,7 @@ class PostPage extends Component {
             </div>
             <h1>User: {this.state.username}</h1>
           </div>
-          <button onChange={this.handleChange} onClick={this.clickLike()}>
+          <button  onClick={this.clickLike}>
             Likes: {this.state.upvotes}
           </button>
 
