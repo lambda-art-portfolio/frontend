@@ -55,7 +55,7 @@ state = {
   };
 
   render() {
-    // console.log(this.state.credentails)
+    console.log(this.state.credentails)
     // console.log(this.state.credentials)
     console.log(this.state);
     return (

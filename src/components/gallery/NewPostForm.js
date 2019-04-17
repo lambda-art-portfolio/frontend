@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "../../CSS/postform.css"
+
 export default class PostForm extends Component {
   constructor(props) {
     super(props);

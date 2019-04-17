@@ -9,8 +9,12 @@ import UserPage from "./components/routes/UserPage";
 import UserInfo from "./components/routes/UserInfo";
 import ProtectedNav from "./components/navigation/ProtectedNav"
 import PrivateNav from "./components/routes/PrivateNav";
+import PostPage from './components/gallery/PostPage'
+import NotFound from './components/routes/NotFound'
 
 class App extends Component {
+
+
   render() {
     return (
       <div className="index">
@@ -26,7 +30,9 @@ class App extends Component {
             <Route exact path="/" component={Homepage} />
             <PrivateRoute path="/account" component={UserInfo} />
             <PrivateRoute path="/protected" component={UserPage} />
-            <Route path="*" component={() => "404 NOT FOUND"} />
+            <Route exact path="/post/:id" component={PostPage} />
+
+            <Route path="*" component={NotFound} />
           </Switch>
         </div>
       </div>
