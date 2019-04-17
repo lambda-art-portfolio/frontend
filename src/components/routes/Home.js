@@ -23,7 +23,7 @@ import axios from 'axios'
     }
 
     render() {
-      console.log(this.state.posts)
+      // console.log(this.res.data)
       return (
         <div className="homegrid">
           <PostGrid posts={this.state.posts}/>

@@ -12,19 +12,28 @@ export default class Login extends Component {
 state = {
       credentials: {
         username: "",
-        password: ""
+        password: "",
+        id:"",
+        avatar:"",
       }
     };
     
   loginData = creds => {
-    console.log(creds)
+    // console.log(creds)
     return axios
       .post("https://web17-artfolio.herokuapp.com/api/account/login", creds)
       .then(res => {
         localStorage.setItem("token", res.data.token);
-        console.log(res.data)
+        // console.log(res.data);
+        this.setState({
+          ...this.state,
+          username: res.data.username,
+          password: res.data.password,
+          id: res.data.id,
+          avatar: res.data.avatar,
+        })
       })
-      .catch(err => console.log(err));
+      .catch(err => console.log(err)); 
   };
 
 
@@ -47,7 +56,8 @@ state = {
 
   render() {
     // console.log(this.state.credentails)
-    // console.log(res.data)
+    // console.log(this.state.credentials)
+    console.log(this.state);
     return (
       <div className="loginContainer">
         <div className="buttonContainer">
