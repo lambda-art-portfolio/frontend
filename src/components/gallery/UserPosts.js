@@ -1,12 +1,13 @@
 import React from "react";
 import "../../CSS/post.css";
-// import {Route, Link} from "react-router-dom"
-// import PostPage from './PostPage'
 
-const Post = props => {
+
+const UserPosts = props => {
+
+  let showOption = localStorage.username === props.username ? "" :"hide";
 
   return (
-   
+    <div className={showOption}>
     <div className="post" >
  
       <div className="postie">
@@ -20,10 +21,11 @@ const Post = props => {
       {/* <p className="description">{props.description}</p> */}
 </div>
 
+    </div>
   );
 };
 
-Post.defaultProps = {
+UserPosts.defaultProps = {
   username: "",
   id: "",
   description: "",
@@ -31,4 +33,4 @@ Post.defaultProps = {
   upvotes: ""
 };
 
-export default Post;
+export default UserPosts;

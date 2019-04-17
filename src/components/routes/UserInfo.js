@@ -7,16 +7,31 @@ class UserInfo extends Component {
         credentials: []
     }
 
-    componentDidMount() {
-    axios
-      .get("https://web17-artfolio.herokuapp.com/api/posts/")
-      .then(res => {
-        localStorage.setItem("token", res.data.token);
-        console.log(res.data)
-      })
-      .catch(err => console.log(err));
-     
-    }
+
+
+    updateUser = e => {
+      // e.preventDefault();
+      axios
+        .put(
+          `https://web17-artfolio.herokuapp.com/api/posts/edit/${
+            this.props.id
+          }`,
+          this.state
+        )
+        .then(res => {
+          this.setState({ posts: res.data });
+          console.log(res);
+          // this.history.push('/');
+        })
+        .catch(err => {
+          console.log(err);
+        });
+      this.setState({
+        picture: "",
+        description: ""
+      });
+    };
+
 
 
   render() {

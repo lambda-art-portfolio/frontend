@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 export default class ProtectedNav extends Component {
 
   logout = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("token");        
+    localStorage.removeItem("username");
   };
 
   // (localStorage.getItem("token") ? "link hide" : "link")

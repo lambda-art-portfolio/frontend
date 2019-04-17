@@ -1,14 +1,22 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+// import PostPage from "./PostPage";
 
-
-import Post from "./Posts";
+import UserPosts from "./UserPosts";
 import "../../CSS/postgrid.css";
 
-export default class PostGrid extends Component {
+export default class userPostsGrid extends Component {
 
-  render() {
-    // console.log(this.props.posts.username)
+  showOption = () => {
+    if (localStorage.username === this.props.posts.username ) {
+      return " ";
+    } else {
+      return "";
+    }
+  }
+
+  render(props) {
+    console.log(this.props.posts.username)
     return (
       <div className="postGrid">
         {this.props.posts
@@ -17,11 +25,11 @@ export default class PostGrid extends Component {
           .map(post => {
             return (
               <div key={post.id}
-              >
+              className={this.showOption()}>
               <Link
               to={`/post/${post.id}`}
               >
-              <Post
+              <UserPosts
                 // avatar={post.avatar}
                 updateItem={post.updateItem}
                 username={post.username}

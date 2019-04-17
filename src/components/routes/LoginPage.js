@@ -5,10 +5,7 @@ import Signup from "./SignupPage";
 import axios from "axios";
 
 export default class Login extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.
-  // }
+
 state = {
       credentials: {
         username: "",
@@ -24,6 +21,9 @@ state = {
       .post("https://web17-artfolio.herokuapp.com/api/account/login", creds)
       .then(res => {
         localStorage.setItem("token", res.data.token);
+        localStorage.setItem("username", res.data.username);
+        localStorage.setItem("id", res.data.id);
+        localStorage.setItem("avatar", res.data.avatar)
         // console.log(res.data);
         this.setState({
           ...this.state,

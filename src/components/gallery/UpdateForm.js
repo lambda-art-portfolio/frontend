@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "../../CSS/postform.css"
+// import "../../CSS/postform.css"
 
 export default class PostForm extends Component {
   constructor(props) {
@@ -11,14 +11,18 @@ export default class PostForm extends Component {
       description: ""
     };
   }
-
-  addPost = e => {
+  updatePost = e => {
     // e.preventDefault();
     axios
-      .post("https://web17-artfolio.herokuapp.com/api/posts/add", this.state)
+      .put(
+        `https://web17-artfolio.herokuapp.com/api/posts/edit/${
+          this.props.id
+        }`,
+        this.state
+      )
       .then(res => {
         this.setState({ posts: res.data });
-        // console.log(res);
+        console.log(res);
         // this.history.push('/');
       })
       .catch(err => {
@@ -40,10 +44,9 @@ export default class PostForm extends Component {
   render() {
     console.log(this.state);
     return (
-      <div className="postformdiv">
-      <div className="container">
-        <h1>New Post</h1>
-        <form onSubmit={this.addPost}>
+      <div >
+      <div >
+        <form onSubmit={this.updatePost}>
           <input
             onChange={this.handleChange}
             placeholder="image url"
@@ -55,9 +58,12 @@ export default class PostForm extends Component {
             onChange={this.handleChange}
             value={this.state.description}
             name="description"
-            className="description"
+            // className="description"
           />
-          <button type="submit">Post</button>
+          <div>
+              <button type="submit">Update Post</button> 
+          </div>
+         
         </form>
         </div>
       </div>
