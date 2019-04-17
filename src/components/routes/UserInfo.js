@@ -9,7 +9,7 @@ class UserInfo extends Component {
 
     componentDidMount() {
     axios
-      .get("https://web17-artfolio.herokuapp.com/api/account/")
+      .get("https://web17-artfolio.herokuapp.com/api/posts/")
       .then(res => {
         localStorage.setItem("token", res.data.token);
         console.log(res.data)

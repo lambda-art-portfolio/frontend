@@ -1,0 +1,22 @@
+.postformdiv{
+    background: #E3EBED;
+    margin-top:100px;
+    
+}
+
+.container{
+padding:20px
+}
+
+.postform h1 {
+    font-size:20px;
+    font-family: sans-serif
+}
+
+.container form input {
+    width:100%;
+} 
+
+.description{
+    height:50px;
+}

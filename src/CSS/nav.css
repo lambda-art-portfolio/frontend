@@ -1,7 +1,24 @@
+
 .navDiv{
     margin:auto;
-    width:1000px;
+    /* width:200%; */
+    background:#E3EBED;
+    height:40px;
+  width:1080px;
+}
+.logo{
+    width:30%;
+    /* height:10%; */
+}
+nav{
+  
+    padding-top:10px;
+   
 }
 .link{
-    padding-left:5px;
+    padding:20px;
+    /* padding-left:5px; */ 
+    text-decoration: none;
+    color:#06061C;
+    font-weight:bold;
 }

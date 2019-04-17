@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import "../../CSS/protectedroute.css";
 import PostForm from "../gallery/PostForm";
-import PostGrid from "../gallery/PostGrid";
+// import PostGrid from "../gallery/PostGrid";
+import Homepage from '../routes/Home'
 // import {Route, Link} from "react-router-dom";
 
 class UserPage extends Component {
   render() {
     return (
       <div className="userpage">
-        <div>user page</div>
         <div className="gridAndForm">
         <div className="gridcontainer">
-          <PostGrid />
+          <Homepage />
           </div>
           <div className="postcontainer">
           <PostForm />

@@ -79,7 +79,7 @@ export default class Signup extends Component {
         </div>
 
         <div className="formContainer">
-          <h1>Sign up</h1>
+          <h1 className="signupheader">Sign up</h1>
           <form 
           className="signupForm"
           onSubmit={this.login} 

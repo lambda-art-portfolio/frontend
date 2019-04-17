@@ -11,11 +11,13 @@
   display: flex;
   border-radius: 5px;
   margin: auto;
+  background:#E3EBED;
   border: solid grey;
 }
 .formContainer {
   margin: 20px auto;
   width: 350px;
+  background:#E3EBED;
   border: solid grey;
   border-radius: 5px;
 }
@@ -36,6 +38,10 @@
   margin-top: 20px;
 }
 
+.signupheader {
+display:none
+}
+
 .signupForm {
   margin: auto;
   width: 300px;
@@ -45,10 +51,14 @@
 
 button {
   width: 100%;
+  font-weight:bold;
+  background:white
 }
 button:hover {
   cursor: pointer;
 }
 .formButton {
   margin: 20px 0;
+  font-weight:bold;
+  background:white
 }

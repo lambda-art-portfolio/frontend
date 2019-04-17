@@ -16,19 +16,19 @@ export default class ProtectedNav extends Component {
         <div className="navDiv">
           <nav>
             <div>
-              <Link className="link" to="/">
+              <Link className="link home" to="/">
                 Home
               </Link>
             </div>
             <div>{/* <input /> */}</div>
             <div>
-              <Link className="link" to="/protected">
+              <Link className="link user" to="/protected">
                 User Page
               </Link>
-              <Link className="link" to="/account">
+              <Link className="link account" to="/account">
                 Account
               </Link>
-              <Link to="/" className="link" onClick={this.logout}>
+              <Link to="/" className="link logout" onClick={this.logout}>
                 Logout
               </Link>
             </div>

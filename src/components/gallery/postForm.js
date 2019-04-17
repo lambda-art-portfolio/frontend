@@ -1,37 +1,65 @@
-import React, { Component } from 'react'
-import axios from "axios"
-
-
+import React, { Component } from "react";
+import axios from "axios";
+import "../../CSS/postform.css"
 export default class PostForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      token: "",
-      picture:"",
-      description:""
-    }
+      token: localStorage.getItem("token"),
+      picture: "",
+      description: ""
+    };
   }
 
-addPost = e => {
-axios
-.post("https://web17-artfolio.herokuapp.com/api/posts/add")
-}
+  addPost = e => {
+    // e.preventDefault();
+    axios
+      .post("https://web17-artfolio.herokuapp.com/api/posts/add", this.state)
+      .then(res => {
+        this.setState({ posts: res.data });
+        console.log(res);
+        // this.history.push('/');
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    this.setState({
+      picture: "",
+      description: ""
+    });
+  };
 
+  handleChange = e => {
+    // e.preventDefault();
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
 
   render() {
+    console.log(this.state);
     return (
-      <div>
-        new post
-<form>
-  <input 
-  placeholder="image url"/>
-  <input 
-  placeholder="description"
-  />
-  <button>Post</button>
-</form>
-      
+      <div className="postformdiv">
+      <div className="container">
+        <h1>New Post</h1>
+        <form onSubmit={this.addPost}>
+          <input
+            onChange={this.handleChange}
+            placeholder="image url"
+            value={this.state.picture}
+            name="picture"
+          />
+          <input
+            placeholder="description"
+            onChange={this.handleChange}
+            value={this.state.description}
+            name="description"
+            className="description"
+          />
+          <button type="submit">Post</button>
+        </form>
+        </div>
       </div>
-    )
+    );
   }
 }

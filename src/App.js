@@ -13,6 +13,7 @@ import PrivateNav from "./components/routes/PrivateNav";
 class App extends Component {
   render() {
     return (
+      <div className="index">
       <div className="App">
         <div>
           <header className="App-header">
@@ -28,6 +29,7 @@ class App extends Component {
             <Route path="*" component={() => "404 NOT FOUND"} />
           </Switch>
         </div>
+      </div>
       </div>
     );
   }
