@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Post from "./Post";
+import Post from "./Posts";
 import "../../CSS/postgrid.css";
 
 export default class PostGrid extends Component {

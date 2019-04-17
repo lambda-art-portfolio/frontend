@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PostGrid from '../gallery/PostGrid';
+import PostGrid from '../gallery/PostsGrid';
 import "../../CSS/homepage.css"
 import axios from 'axios'
 

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../../CSS/protectedroute.css";
-import PostForm from "../gallery/PostForm";
+import PostForm from "../gallery/NewPostForm";
 // import PostGrid from "../gallery/PostGrid";
 import Homepage from '../routes/Home'
 // import {Route, Link} from "react-router-dom";
