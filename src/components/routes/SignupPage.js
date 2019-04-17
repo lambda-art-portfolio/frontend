@@ -23,6 +23,9 @@ export default class Signup extends Component {
       .post("https://web17-artfolio.herokuapp.com/api/account/register", creds)
       .then(res => {
         localStorage.setItem("token", res.data.token);
+        localStorage.setItem("username", res.data.username);
+        localStorage.setItem("id", res.data.id);
+        localStorage.setItem("avatar", res.data.avatar)
         console.log(res.data)
       })
       .catch(err => console.log(err));
@@ -54,20 +57,6 @@ export default class Signup extends Component {
 
 
   render() {
-    // let usernameErr= null,
-    // passwordErr= null,
-    // emailErr= null;
-
-    // for(let err of this.state.credentials.errors) {
-    //   if(err.e ==="username") {
-    //     usernameErr = err.msg;
-    //   } if (err.e ==="email") {
-    //     emailErr = err.msg;
-    //   } if (err.e ==="password") {
-    //     passwordErr = err.msg;
-    //   }
-
-    // }
 
     return (
       <div className="signupContainer">
@@ -92,14 +81,14 @@ export default class Signup extends Component {
               // value=''
               onChange={this.handleChange}
             />
-             <input
+             {/* <input
               className="signupInput"
               type="text"
               name="avatar"
               placeholder="Avatar"
               // value=''
               onChange={this.handleChange}
-            />
+            /> */}
             <input
               className="signupInput"
               type="text"
