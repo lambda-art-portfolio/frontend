@@ -12,7 +12,7 @@ export default class Navbar extends Component {
           <nav>
             <div>
               <Link className="link home " to="/">
-              home
+              Artfolio
                {/* <img src={logo} alt="" className="logo"/> */}
               </Link>
             </div>

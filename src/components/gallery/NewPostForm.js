@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "../../CSS/postform.css";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+
 
 export default class PostForm extends Component {
   constructor(props) {
@@ -39,8 +42,6 @@ export default class PostForm extends Component {
     });
   };
 
-
-
   render() {
     console.log(this.state);
     return (
@@ -49,22 +50,32 @@ export default class PostForm extends Component {
           <h1>New Post</h1>
           <form onSubmit={this.addPost}>
 
-
-            <input
-              onChange={this.handleChange}
-              placeholder="image url"
+            <TextField
+              id="standard-dense"
+              label="image url"
+              margin="image url"
               value={this.state.picture}
+              onChange={this.handleChange}
               name="picture"
             />
-            <textarea
-              rows="5"
-              placeholder="description"
+            <TextField
               onChange={this.handleChange}
               value={this.state.description}
+              id="standard-multiline-static"
+              label="description"
+              multiline
+              rows="5"
+              margin="normal"
               name="description"
-              className="description"
             />
-            <button type="submit">Post</button>
+            <Button
+              onClick={this.handleCloseUpdate}
+              variant="contained"
+              color="primary"
+              type="submit"
+            >
+              Post
+            </Button>
           </form>
         </div>
       </div>

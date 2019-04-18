@@ -25,7 +25,7 @@ nav{
 }  
 @media screen and (max-width: 500px) {
     .navDiv {
-        width:500px;
-      background: blue;
+        width:400px;
+      /* background: blue; */
     }
   }

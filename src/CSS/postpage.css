@@ -15,26 +15,20 @@
 
 .info-div {
   width: 30%;
-  margin:30px;
+  margin: 30px;
 }
-
-.info-div button{
-    width: 30%;
-    margin:10px 0;
-  }
 
 .user-info-div {
   display: flex;
-  margin:10px;
+  margin: 10px;
   /* justify-content: center; */
   align-content: center;
-  text-align: center
+  text-align: center;
 }
 
-.user-info-div h1{
-    margin:auto 10px;;
- 
-  }
+.user-info-div h1 {
+  margin: auto 10px;
+}
 
 .user-info-div div {
   width: 60px;
@@ -42,12 +36,65 @@
 }
 
 .user-info-div div img {
-    
-    padding:1px;
-  width: 90%;
-  height: 90%;
+  padding: 1px;
+  width: 50px;
+  height: 50px;
   object-fit: cover;
   object-position: 100% 0;
   border: solid;
   border-radius: 100%;
+}
+
+.update-button {
+  margin-top: 200px;
+}
+@media screen and (max-width: 500px) {
+  .postpage-container {
+    flex-direction: column;
+    padding: 5px;
+  }
+  .picture-div {
+    margin-top: 20px;
+    width: 400px;
+  }
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-bottom: 20px;
+  }
+  .update-button {
+    margin-top: 0;
+  }
+  .likes {
+    height:50px
+  }
+  .user-info-div {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    width:200px;
+    margin:auto;
+  }
+  .user-info-div h1 {
+    margin: 0;
+    
+  }
+
+  .top-info {
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+    margin:auto;
+    align-items: center;
+  }
+  .avatar{
+    margin:auto;
+  }
+  .description-div{
+    padding-top:20px;
+    margin:auto;
+width:340px;
+  }
 }

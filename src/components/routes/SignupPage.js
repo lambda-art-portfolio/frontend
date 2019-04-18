@@ -3,10 +3,6 @@ import "../../CSS/signup.css";
 import { Route, Link } from "react-router-dom";
 import Login from "./LoginPage";
 import axios from "axios";
-import PropTypes from "prop-types";
-import classNames from "classnames";
-import { withStyles } from "@material-ui/core/styles";
-import MenuItem from "@material-ui/core/MenuItem";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
@@ -52,7 +48,6 @@ export default class Signup extends Component {
   };
 
   render() {
-    const { classes } = this.props;
     return (
       <div className="signupContainer">
         <div className="buttonContainer">
@@ -91,39 +86,6 @@ export default class Signup extends Component {
               onChange={this.handleChange}
               name="password"
             />
-            {/* <input
-              className="signupInput"
-              type="text"
-              name="email"
-              placeholder="Email"
-              // value=''
-              onChange={this.handleChange}
-            />
-            <input
-              className="signupInput"
-              type="text"
-              name="username"
-              placeholder="Username"
-              // value=''
-              onChange={this.handleChange}
-            />
-            <input
-              className="signupInput"
-              type="password"
-              name="password"
-              placeholder="Password"
-              // value=''
-              onChange={this.handleChange}
-            /> */}
-
-            {/* <input
-              className="signupInput"
-              type="text"
-              name="avatar"
-              placeholder="Avatar"
-              // value=''
-              onChange={this.handleChange}
-            /> */}
             <button className="btnholder">
               <Button
                 variant="contained"

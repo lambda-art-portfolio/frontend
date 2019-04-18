@@ -61,5 +61,10 @@ width:150px;
 height:60px;
 }
 
-
+@media screen and (max-width: 500px) {
+  .App {
+      width:400px;
+    /* background: blue; */
+  }
+}
 

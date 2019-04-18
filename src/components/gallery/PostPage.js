@@ -5,9 +5,7 @@ import UpdateForm from "../gallery/UpdateForm";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
-
 
 class PostPage extends Component {
   state = {
@@ -45,14 +43,22 @@ class PostPage extends Component {
   }
 
   deletePost = () => {
-    axios
-      .delete(
-        `https://web17-artfolio.herokuapp.com/api/posts/${
-          this.props.match.params.id
-        }`, { token: localStorage.getItem("token") }
-      )
+    const config = {
+      method: "delete",
+      url: `https://web17-artfolio.herokuapp.com/api/posts/${
+        this.props.match.params.id
+      }`,
+      headers: {
+        Authorization: this.state.token
+      }
+    };
+
+    axios(config)
       .then(() => {
         this.props.history.push("/protected");
+      })
+      .catch(err => {
+        console.log(err);
       });
   };
 
@@ -107,77 +113,82 @@ class PostPage extends Component {
           <img src={this.state.picture} alt="" />
         </div>
         <div className="info-div">
-          <div className="user-info-div">
-            <div>
-              <img src={this.state.avatar} alt="" />
+          <div className="top-info">
+            <div className="user-info-div">
+              <div className="avatar">
+                <img src={this.state.avatar} alt="" />
+              </div>
+              <h1>User: {this.state.username}</h1>
             </div>
-            <h1>User: {this.state.username}</h1>
+            <Button
+              className="likes"
+              variant="outlined"
+              color="primary"
+              onClick={this.clickLike}
+            >
+              Likes: {this.state.upvotes}
+            </Button>
           </div>
-          <button onClick={this.clickLike}>Likes: {this.state.upvotes}</button>
-
           <div className="description-div">
-            <h1>Description: </h1>
             <p>{this.state.description}</p>
           </div>
-
-          {/* <div className={this.showOption()}>
-            <UpdateForm id={this.props.match.params.id} />
-            <button onClick={this.deletePost} > delete</button>
-          </div> */}
         </div>
 
         <div className={this.showOption()}>
-          <Button
-            variant="contained"
-            color="secondary"
-            onClick={this.handleClickOpenDelete}
-          >
-            delete
-          </Button>
-          <Dialog
-            open={this.state.deleteopen}
-            onClose={this.handleCloseDelete}
-            aria-labelledby="alert-dialog-title"
-            aria-describedby="alert-dialog-description"
-          >
-            <DialogTitle id="alert-dialog-title">
-              {"Are you sure you want to delete?"}
-            </DialogTitle>
-
-            <DialogActions>
-              <Button onClick={this.handleCloseDelete} color="primary">
-                Cancel
-              </Button>
-              <Button onClick={this.deletePost} color="primary" autoFocus>
-                Delete
-              </Button>
-            </DialogActions>
-          </Dialog>
-
-          <div>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={this.handleClickOpenUpdate}
-            >
-              Update
-            </Button>
-            <Dialog
-              onClose={this.handleCloseUpdate}
-              aria-labelledby="customized-dialog-title"
-              open={this.state.updateopen}
-            >
-              <Button onClick={this.handleCloseUpdate} color="primary">
-                Cancel
-              </Button>
-              <DialogTitle
-                id="customized-dialog-title"
-                onClose={this.handleCloseUpdate}
+          <div className="button-container">
+            <div>
+              <Button
+                variant="contained"
+                color="secondary"
+                onClick={this.handleClickOpenDelete}
               >
-                {/*  */}
-              </DialogTitle>
-              <UpdateForm id={this.props.match.params.id} />
-            </Dialog>
+                delete
+              </Button>
+              <Dialog
+                open={this.state.deleteopen}
+                onClose={this.handleCloseDelete}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+              >
+                <DialogTitle id="alert-dialog-title">
+                  {"Are you sure you want to delete?"}
+                </DialogTitle>
+
+                <DialogActions>
+                  <Button onClick={this.handleCloseDelete} color="primary">
+                    Cancel
+                  </Button>
+                  <Button
+                    onClick={this.deletePost}
+                    variant="contained"
+                    color="secondary"
+                    autoFocus
+                  >
+                    Delete
+                  </Button>
+                </DialogActions>
+              </Dialog>
+            </div>
+
+            <div className="update-button">
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={this.handleClickOpenUpdate}
+              >
+                Update
+              </Button>
+              <Dialog
+                onClose={this.handleCloseUpdate}
+                aria-labelledby="customized-dialog-title"
+                open={this.state.updateopen}
+              >
+                <Button onClick={this.handleCloseUpdate} color="secondary">
+                  Cancel
+                </Button>
+                <UpdateForm id={this.props.match.params.id} />
+              </Dialog>
+            </div>
           </div>
         </div>
       </div>

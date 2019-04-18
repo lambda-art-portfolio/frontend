@@ -4,10 +4,6 @@ import { Route, Link } from "react-router-dom";
 import Signup from "./SignupPage";
 import axios from "axios";
 import LoggedInUser from "../UserInfo/LoggedInUser";
-import PropTypes from "prop-types";
-import classNames from "classnames";
-import { withStyles } from "@material-ui/core/styles";
-import MenuItem from "@material-ui/core/MenuItem";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
@@ -60,9 +56,6 @@ export default class Login extends Component {
   };
 
   render() {
-    // console.log(this.state.credentails)
-    // console.log(this.state.credentials)
-    // console.log(this.state.username);
     return (
       <div className="loginContainer">
         <div className="buttonContainer">
@@ -105,13 +98,6 @@ export default class Login extends Component {
             </button>
           </form>
         </div>
-        {/* <LoggedInUser
-          username={this.state.username}
-          password={this.state.password}
-          id={this.state.id}
-          avatar={this.state.avatar}
-          // credentials={this.state}
-        /> */}
         <Route
           render={() => (
             <LoggedInUser

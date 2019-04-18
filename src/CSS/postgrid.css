@@ -8,3 +8,11 @@
   justify-content: center;
   /* align-content: flex-start; */
 }
+
+@media screen and (max-width: 500px) {
+  .postGrid {
+      width:100%;
+    /* background: blue; */
+  }
+}
+
