@@ -52,10 +52,13 @@
   .postpage-container {
     flex-direction: column;
     padding: 5px;
+    width:300px;
+    margin: auto;
+    margin-top: 20px;
   }
   .picture-div {
     margin-top: 20px;
-    width: 400px;
+    width:300px;
   }
   .button-container {
     display: flex;
@@ -74,7 +77,7 @@
     flex-direction: column;
     align-content: center;
     text-align: center;
-    width:200px;
+    width:100px;
     margin:auto;
   }
   .user-info-div h1 {
@@ -83,7 +86,7 @@
   }
 
   .top-info {
-    width: 320px;
+    width: 250px;
     display: flex;
     justify-content: space-between;
     margin:auto;
@@ -95,6 +98,6 @@
   .description-div{
     padding-top:20px;
     margin:auto;
-width:340px;
+width:250px;
   }
 }

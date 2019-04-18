@@ -18,7 +18,8 @@
 }
 @media screen and (max-width: 500px) {
     .userpage{
-        width:400px;
+        width:300px;
+        margin: auto;
     }
     .gridAndForm {
         justify-content: none;
@@ -40,7 +41,7 @@
         margin-top:10px;
         margin-bottom:10px;
         margin-right: 0px;
-        width:400px;
+        width:300px;
  
     }
     .post-button{

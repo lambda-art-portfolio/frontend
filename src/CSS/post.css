@@ -23,7 +23,7 @@ img {
 .picture {
   object-fit: cover;
   object-position: 100% 0;
-  widows: 200px;
+  
   height: 200px;
   /* width:100%; */
 }
@@ -31,7 +31,7 @@ img {
 @media screen and (max-width: 500px) {
   .post {
       margin: 5px auto;
-    width: 400px;
+    width: 300px;
     /* background: blue; */
   }
   .imagediv {

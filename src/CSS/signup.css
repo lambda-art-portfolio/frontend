@@ -65,7 +65,7 @@ button:hover {
 
 @media screen and (max-width: 500px) {
   .signupContainer {
-    width:400px;
+    width:360px;
     /* background: blue; */
   }
 }
