@@ -5,6 +5,7 @@
     background:#E3EBED;
     height:40px;
   width:1080px;
+
 }
 .logo{
     width:30%;
@@ -21,4 +22,10 @@ nav{
     text-decoration: none;
     color:#06061C;
     font-weight:bold;
-}
+}  
+@media screen and (max-width: 500px) {
+    .navDiv {
+        width:500px;
+      background: blue;
+    }
+  }

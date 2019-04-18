@@ -37,7 +37,13 @@
   margin-top: 20px;
   background:white
 }
-.formButton {
+
+.btnholder{
+color:none;
+background:none;
+border:none;
+margin:20px 0;
+
 }
 /* button {
   width: 100%;

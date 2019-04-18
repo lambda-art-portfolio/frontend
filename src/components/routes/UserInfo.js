@@ -3,10 +3,15 @@ import "../../CSS/accountpage.css"
 import axios from 'axios'
 
 class UserInfo extends Component {
-    state = {
-        credentials: []
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: props.username,
+      password: props.password,
+      id: props.id,
+      avatar: props.avatar
     }
-
+  }
 
 
     updateUser = e => {
@@ -35,9 +40,10 @@ class UserInfo extends Component {
 
 
   render() {
+    console.log(this.state)
     return (
       <div>
-        user account
+        rggrg
       </div>
     )
   }

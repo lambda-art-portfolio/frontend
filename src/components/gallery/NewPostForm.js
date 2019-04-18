@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "../../CSS/postform.css"
+import "../../CSS/postform.css";
 
 export default class PostForm extends Component {
   constructor(props) {
@@ -8,7 +8,8 @@ export default class PostForm extends Component {
     this.state = {
       token: localStorage.getItem("token"),
       picture: "",
-      description: ""
+      description: "",
+      selectedfile: null
     };
   }
 
@@ -26,7 +27,8 @@ export default class PostForm extends Component {
       });
     this.setState({
       picture: "",
-      description: ""
+      description: "",
+      selectedfile: null
     });
   };
 
@@ -37,28 +39,33 @@ export default class PostForm extends Component {
     });
   };
 
+
+
   render() {
     console.log(this.state);
     return (
       <div className="postformdiv">
-      <div className="container">
-        <h1>New Post</h1>
-        <form onSubmit={this.addPost}>
-          <input
-            onChange={this.handleChange}
-            placeholder="image url"
-            value={this.state.picture}
-            name="picture"
-          />
-          <textarea rows="5" 
-            placeholder="description"
-            onChange={this.handleChange}
-            value={this.state.description}
-            name="description"
-            className="description"
-          />
-          <button type="submit">Post</button>
-        </form>
+        <div className="container">
+          <h1>New Post</h1>
+          <form onSubmit={this.addPost}>
+
+
+            <input
+              onChange={this.handleChange}
+              placeholder="image url"
+              value={this.state.picture}
+              name="picture"
+            />
+            <textarea
+              rows="5"
+              placeholder="description"
+              onChange={this.handleChange}
+              value={this.state.description}
+              name="description"
+              className="description"
+            />
+            <button type="submit">Post</button>
+          </form>
         </div>
       </div>
     );
