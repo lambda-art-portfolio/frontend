@@ -4,6 +4,7 @@
   justify-content: center;
   width:1024px;
   margin: auto;
+  /* background:red; */
 }
 nav {
   display:flex;
@@ -16,3 +17,47 @@ nav {
 .show{
   display:block;
 }
+.errorpage {
+  padding:50px;
+  display:flex;
+  justify-content: space-around;
+  margin-top:20px;
+  border:10px solid #4C5A72;
+  background:#E3EBED;
+  border-radius: 20px;
+}
+.errorpage div {
+  /* border:solid; */
+  width:49%;
+  text-align: center;
+  margin: auto;
+  border-radius: 100px;
+}
+
+.errorpage div h1 {
+font-size: 50px
+}
+
+.errorpage div p {
+  font-size: 30px
+  }
+
+
+.errorpage img {
+  /* border:solid; */
+  width:49%;
+}
+
+.error{
+padding:20px;
+}
+
+.returnhome{
+  font-size:20px;
+  border-radius: 20px;
+  color:#E3EBED;
+  background:#0C0E35;
+width:150px;
+height:60px;
+}
+

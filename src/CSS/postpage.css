@@ -1,0 +1,53 @@
+.postpage-container {
+  margin-top: 20px;
+  padding: 20px;
+  display: flex;
+  background: #e3ebed;
+  border-radius: 20px;
+}
+
+.picture-div {
+  width: 60%;
+}
+.picture-div img {
+  width: 100%;
+}
+
+.info-div {
+  width: 30%;
+  margin:30px;
+}
+
+.info-div button{
+    width: 30%;
+    margin:10px 0;
+  }
+
+.user-info-div {
+  display: flex;
+  margin:10px;
+  /* justify-content: center; */
+  align-content: center;
+  text-align: center
+}
+
+.user-info-div h1{
+    margin:auto 10px;;
+ 
+  }
+
+.user-info-div div {
+  width: 60px;
+  height: 60px;
+}
+
+.user-info-div div img {
+    
+    padding:1px;
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  object-position: 100% 0;
+  border: solid;
+  border-radius: 100%;
+}

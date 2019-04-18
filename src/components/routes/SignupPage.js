@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../../CSS/signup.css";
 import { Route, Link } from "react-router-dom";
-import Login from "./Login";
+import Login from "./LoginPage";
 import axios from 'axios'
 
 export default class Signup extends Component {
@@ -9,7 +9,7 @@ export default class Signup extends Component {
   //   super(props);
    state = {
       credentials: {
-        avatar:'',
+        avatar:"",
         email: "",
         username: "",
         password: "",
@@ -79,7 +79,7 @@ export default class Signup extends Component {
         </div>
 
         <div className="formContainer">
-          <h1>Sign up</h1>
+          <h1 className="signupheader">Sign up</h1>
           <form 
           className="signupForm"
           onSubmit={this.login} 

@@ -4,10 +4,13 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  /* background:white */
+  
 }
 
 .loginheader{
-    
+  /* background:white   */
+  display:none
 }
 
 
@@ -16,19 +19,23 @@
   width: 300px;
   display: flex;
   flex-direction: column;
+  
 }
 .topButton {
   padding: 0;
   border: none;
   background: none;
+  
 }
 .selected {
   border-bottom: solid;
   text-align: center;
   border-bottom: solid;
+  background:white
 }
 .loginInput {
   margin-top: 20px;
+  background:white
 }
 .formButton {
 }
