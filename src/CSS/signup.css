@@ -12,13 +12,13 @@
   border-radius: 5px;
   margin: auto;
   background:#E3EBED;
-  border: solid grey;
+  border: solid #06061c;
 }
 .formContainer {
   margin: 20px auto;
   width: 350px;
   background:#E3EBED;
-  border: solid grey;
+  border: solid #06061c;
   border-radius: 5px;
 }
 

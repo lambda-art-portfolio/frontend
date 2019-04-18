@@ -50,7 +50,7 @@ table {
 }
 
 .index {
-	background:#0C0E35
+	background:#0C0E35;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -67,4 +67,8 @@ figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 font-family: 'Source Sans Pro', sans-serif;
+}
+body{
+	background:#0C0E35;
+	height:100vh
 }
