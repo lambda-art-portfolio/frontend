@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
 .navDiv {
   margin: auto;
   /* width:200%; */
   background: #e3ebed;
-  height: 40px;
+  height: 50px;
   width: 1080px;
 }
 .logo {
@@ -19,9 +21,29 @@ nav {
   color: #06061c;
   font-weight: bold;
 }
+.home{
+  font-family: 'Permanent Marker', cursive;
+  font-size:30px;
+  width:10px;
+}
+.home-logo{
+  /* margin-top:auto ; */
+  width:35px;
+  height:35px;
+}
+
+.account-logo{
+  width:30px;
+  height:30px;
+}
+
 @media screen and (max-width: 500px) {
   .navDiv {
     width: 360px;
     /* background: blue; */
   }
+  .home-logo{
+display:none;
+  }
+
 }
