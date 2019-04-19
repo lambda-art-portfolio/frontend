@@ -16,7 +16,7 @@ export default class userPostsGrid extends Component {
   }
 
   render(props) {
-    console.log(this.props.posts.username)
+    // console.log(this.props.posts.username)
     return (
       <div className="postGrid">
         {this.props.posts

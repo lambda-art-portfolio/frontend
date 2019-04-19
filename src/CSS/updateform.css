@@ -1,0 +1,9 @@
+.updateform{
+    background: #E3EBED;
+    padding: 10px;
+}
+.inputdiv{
+display: flex;
+flex-direction: column;
+
+}

@@ -11,7 +11,41 @@
 }
 
 .gridAndForm .postcontainer {
+    margin-top:100px;
+    margin-right: 20px;
     width:200px;
     /* border:solid; */
-    height:100px;
 }
+@media screen and (max-width: 500px) {
+    .userpage{
+        width:300px;
+        margin: auto;
+    }
+    .gridAndForm {
+        justify-content: none;
+        flex-direction: column-reverse;
+        width:100%;
+        margin: 0;
+      /* background: blue; */
+    }
+
+
+    
+    .gridAndForm .gridcontainer {
+        width:100px;
+        margin: auto;
+        /* border:solid; */
+    }
+
+    .gridAndForm .postcontainer {
+        margin-top:10px;
+        margin-bottom:10px;
+        margin-right: 0px;
+        width:300px;
+ 
+    }
+    .post-button{
+        margin:auto
+    }
+  }
+  

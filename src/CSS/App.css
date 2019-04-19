@@ -4,7 +4,8 @@
   justify-content: center;
   width:1024px;
   margin: auto;
-  /* background:red; */
+  background:#0C0E35;
+  height:100vh;
 }
 nav {
   display:flex;
@@ -59,5 +60,12 @@ padding:20px;
   background:#0C0E35;
 width:150px;
 height:60px;
+}
+
+@media screen and (max-width: 500px) {
+  .App {
+      width:100%;
+    /* background: blue; */
+  }
 }
 

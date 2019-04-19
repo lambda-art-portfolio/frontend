@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "../../CSS/postform.css"
+import "../../CSS/postform.css";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+
 
 export default class PostForm extends Component {
   constructor(props) {
@@ -8,7 +11,8 @@ export default class PostForm extends Component {
     this.state = {
       token: localStorage.getItem("token"),
       picture: "",
-      description: ""
+      description: "",
+      selectedfile: null
     };
   }
 
@@ -26,7 +30,8 @@ export default class PostForm extends Component {
       });
     this.setState({
       picture: "",
-      description: ""
+      description: "",
+      selectedfile: null
     });
   };
 
@@ -41,24 +46,37 @@ export default class PostForm extends Component {
     console.log(this.state);
     return (
       <div className="postformdiv">
-      <div className="container">
-        <h1>New Post</h1>
-        <form onSubmit={this.addPost}>
-          <input
-            onChange={this.handleChange}
-            placeholder="image url"
-            value={this.state.picture}
-            name="picture"
-          />
-          <textarea rows="5" 
-            placeholder="description"
-            onChange={this.handleChange}
-            value={this.state.description}
-            name="description"
-            className="description"
-          />
-          <button type="submit">Post</button>
-        </form>
+        <div className="container">
+          <h1>New Post</h1>
+          <form onSubmit={this.addPost}>
+
+            <TextField
+              id="standard-dense"
+              label="image url"
+              margin="image url"
+              value={this.state.picture}
+              onChange={this.handleChange}
+              name="picture"
+            />
+            <TextField
+              onChange={this.handleChange}
+              value={this.state.description}
+              id="standard-multiline-static"
+              label="description"
+              multiline
+              rows="5"
+              margin="normal"
+              name="description"
+            />
+            <Button
+              onClick={this.handleCloseUpdate}
+              variant="contained"
+              color="primary"
+              type="submit"
+            >
+              Post
+            </Button>
+          </form>
         </div>
       </div>
     );
